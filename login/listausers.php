@@ -20,7 +20,7 @@ $n_rows = $list_users->num_rows ;
 <body>
     <a href="cadastro.php">+ADD</a>
     <a href="log.php">Login</a>
-    <table id="alter" border="0">
+    <table>
         <thead>
             <tr>
                 <th>ID</th>
