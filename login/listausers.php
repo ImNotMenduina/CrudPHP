@@ -17,9 +17,13 @@ $n_rows = $list_users->num_rows ;
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
+
+<div style="background-color:#000; box-sizing:border-box;padding:10px;">
+        <a href="cadastro.php" class="btn">Adicionar Cliente</a>
+        <a href="log.php" class="btn">Login</a>
+    </div>
+
 <body>
-    <a href="cadastro.php">+ADD</a>
-    <a href="log.php">Login</a>
     <table>
         <thead>
             <tr>
@@ -61,5 +65,7 @@ $n_rows = $list_users->num_rows ;
             ?>
         </tbody>
     </table>
+   
+    
 </body>
 </html>

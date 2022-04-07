@@ -56,6 +56,12 @@ if(!$error)
     <title>Document</title>
 </head>
 <body>
+
+<div style="background-color:#000; box-sizing:border-box;padding:10px;">
+                        <a href="cadastro.php" class="btn">Adicionar Cliente</a>
+                        <a href="listausers.php" class="btn">Lista</a>
+    </div>
+
 <div class="formulario">
         <div class=wrapper>
             <a href="log.php">Login</a>
@@ -69,9 +75,10 @@ if(!$error)
                     ?>>
                 <input type="password" placeholder="senha" name="senha">
                      
-                <button type="submit">cadastrar</button>
+                <button type="submit">Cadastrar</button>
             </form>
         </div>      
     </div>
+    
 </body>
 </html>

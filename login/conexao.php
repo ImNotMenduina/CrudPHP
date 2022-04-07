@@ -9,7 +9,3 @@ if($mysqli->errno)
 {
     echo "Falha ao conetar com o banco de dados!" ; 
 }
-else
-{
-    echo "Connected <br>" ; 
-}

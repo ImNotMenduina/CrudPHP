@@ -74,6 +74,12 @@ if(count($_POST) > 0)
     <title>Document</title>
 </head>
 <body>
+    
+<div style="background-color:#000; box-sizing:border-box;padding:10px;">
+            <a href="cadastro.php" class="btn">Adicionar Cliente</a>
+            <a href="log.php" class="btn">Login</a>
+    </div>
+
     <div class="formulario">
         <div class=wrapper>
             <a href="log.php">Login</a>
@@ -99,6 +105,6 @@ if(count($_POST) > 0)
             </form>
         </div>      
     </div>
-    
+
 </body>
 </html>
