@@ -1,8 +1,11 @@
 <?php
 @include('conexao.php') ;
+$id = $_GET['id'] ; 
+$query_user = $mysqli->query("SELECT * FROM users WHERE id='$id'") ; 
+$user = $query_user->fetch_assoc() ;
+
 if(isset($_POST['deletar'])){
-     
-    $id = $_GET['id'] ; 
+
     if($_POST['deletar']== 1){
         $sql_code = "DELETE FROM users WHERE id='$id' " ; 
         $sucess = $mysqli->query($sql_code) or die($mysqli->error) ; 
@@ -30,7 +33,7 @@ if(isset($_POST['deletar'])){
     <div class="formulario">
         <div class="wrapper">
             <form action="" method="POST">
-                <h2>Tem certeza que deseja excluir este usuário do banco de dados ? (ATENÇÃO // ESTE PROCESSO É IRREVERSSÍVEL !). </h2>
+                <h2>Tem certeza que deseja excluir <?php echo $user['nome'] ?> do banco de dados ? (ATENÇÃO // ESTE PROCESSO É IRREVERSSÍVEL !). </h2>
                 <button name="deletar" value="1" >Sim,estou ciente.</button>
 
                 <a href="listausers.php">

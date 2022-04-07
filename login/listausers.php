@@ -20,7 +20,7 @@ $n_rows = $list_users->num_rows ;
 <body>
     <a href="cadastro.php">+ADD</a>
     <a href="log.php">Login</a>
-    <table border="2">
+    <table id="alter" border="0">
         <thead>
             <tr>
                 <th>ID</th>
@@ -51,8 +51,8 @@ $n_rows = $list_users->num_rows ;
                         <td><?php echo $users['nascimento'] ?></td>
                         <td><?php echo $users['data_cadastro'] ?></td>
                         <td>
-                            <a href="deletar_cliente.php?id=<?php echo $users['id'] ?>">Deletar</a>
-                            <a href="editar_cliente.php?id=<?php echo $users['id'] ?>">Editar</a>
+                            <a href="deletar_cliente.php?id=<?php echo $users['id'] ?>" class="btn">Deletar</a>
+                            <a href="editar_cliente.php?id=<?php echo $users['id'] ?>" class="btn">Editar</a>
                         </td>
                 </tr>
                     <?php 
