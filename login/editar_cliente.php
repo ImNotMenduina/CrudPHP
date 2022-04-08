@@ -5,6 +5,8 @@ $sql = "SELECT * FROM users WHERE id='$id'" ;
 $query_user = $mysqli->query($sql) or die($mysqli->error) ; 
 $user = $query_user->fetch_assoc() ; 
 
+/* TIME AMERICAN TO BRAZILIAN */
+
 
 if(count($_POST) > 0)
 {
