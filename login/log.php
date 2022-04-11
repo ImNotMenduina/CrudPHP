@@ -29,6 +29,14 @@ if(!$error)
  {
     if(password_verify($_POST['senha'] , $user['senha'])){
         echo "<p>SUCSSES // Ousuário válido ! </p>" ; 
+        if(!isset($_SESSION))
+        {
+            session_start() ; 
+            $_SESSION['id'] = $user['id'] ; 
+            header('Location:listausers.php') ;  
+           
+        }
+        
     }
     else 
     {
@@ -75,7 +83,7 @@ if(!$error)
                     ?>>
                 <input type="password" placeholder="senha" name="senha">
                      
-                <button type="submit">Cadastrar</button>
+                <button type="submit">Entrar</button>
             </form>
         </div>      
     </div>

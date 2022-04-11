@@ -1,8 +1,26 @@
 <?php 
+@include('conexao.php') ; 
+
+if(!isset($_SESSION))
+{
+    session_start() ; 
+}
+if(!isset($_SESSION['id']))
+{
+    echo '<p><a href="log.php">Clique aqui</a> para fazer login.</p>' ; 
+    die("Você precisa estar logado para realizar esta ação.") ;
+}
+else
+{
+    $id = $_SESSION['id'] ; 
+}
+$dataUser = $mysqli->query("SELECT * FROM users WHERE id='$id'") ; 
+$userLog = $dataUser->fetch_assoc() ; 
+echo "<p>cadastrando clientes como : " .$userLog['nome'] ;  
 
 if(count($_POST) > 0)
 {
-    @include('conexao.php') ; 
+    
     $nome = $_POST['nome'] ; 
     $email = $_POST['email'] ;
     $telefone = $_POST['telefone'] ; 

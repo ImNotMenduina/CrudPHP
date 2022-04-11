@@ -1,6 +1,32 @@
 <?php 
 
 @include('conexao.php') ; 
+
+if(!isset($_SESSION))
+{
+    session_start() ;  
+}
+
+if(!isset($_SESSION['id']))
+{   
+    echo '<p><a href="log.php">Clique aqui</a> para fazer login.</p>' ; 
+    die("Você precisa estar logado para realizar esta ação.") ;
+
+}
+else
+{
+    $id = $_SESSION['id'] ; 
+}
+
+
+
+$sql_userInf = "SELECT * FROM users WHERE id='$id'" ; 
+$queryLogUser = $mysqli->query($sql_userInf) or die($mysqli->eror) ; 
+$dataUser = $queryLogUser->fetch_assoc() ; 
+echo "<p>Bem-vindo(a) " . $dataUser['nome']."</p>" ;  
+echo "<p>E-mail : ". $dataUser['email'] ."</p>" ; 
+echo '<a href="logout.php" class="btn">Sair</a>' ; 
+
 $sql_code = "SELECT * FROM users ORDER BY id" ; 
 $list_users = $mysqli->query($sql_code) or die($mysqli->error) ; 
 $n_rows = $list_users->num_rows ; 

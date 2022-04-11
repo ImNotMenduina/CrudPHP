@@ -84,3 +84,8 @@ a:hover{
     background-color : rgba(0, 119, 255,.8) ;
 }
 
+.sair{
+    display : inline-block ; 
+    
+}
+
